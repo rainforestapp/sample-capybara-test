@@ -23,5 +23,5 @@ bundle install
 You can then run the specs using the following command:
 
 ```bash
-source ./.rvmrc
+bundle exec ruby test_case.rb
 ```
