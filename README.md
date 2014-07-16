@@ -31,7 +31,7 @@ You can then run the specs using the following command:
 bundle exec rainforest_test test_case.rb
 ```
 
-This MUST work. If we cannot run your spec in this way, we won't consider the contract complete.
+This MUST work. If we cannot run your spec in this way, we won't consider the contract complete. Your test does not need to be named `test_case.rb`, but it needs to be in a single file.
 
 ## Writing the spec
 
@@ -50,6 +50,17 @@ Indentation should be 2 spaces. Use SPACES, not tabs.
 ### Avoid changing the template as much as possible
 
 Try to limit your changes to the block of the `step` method. You can put code outside of it if needed, for instance to share state across multiple steps. However, we'd like most of the logic of the step to be encapsulated within the step.
+
+## Starting a new test
+
+If you automate multiple tests for us, make sure you always work from the latest version of this repository.
+
+To get the latest version, use the following commands:
+
+```bash
+git pull origin master
+bundle install
+```
 
 ## Help!
 
