@@ -2,10 +2,15 @@
 
 ## Setup
 
-You must have [Firefox](http://www.mozilla.org/en-US/firefox/new/) installed.
+You must have [Firefox](http://www.mozilla.org/en-US/firefox/new/) installed and [Git](http://git-scm.com/).
 
+Clone this repository
 
-You must use the version or ruby specified in the `.rvmrc` file. If you have [rvm](https://rvm.io/) already installed, you can simply run
+```bash
+git clone git@github.com:rainforestapp/sample-capybara-test.git
+```
+
+You must use the version or Ruby specified in the `.rvmrc` file. If you have [rvm](https://rvm.io/) already installed, you can simply run
 
 ```bash
 source ./.rvmrc
