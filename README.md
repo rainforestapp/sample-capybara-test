@@ -42,19 +42,19 @@ This MUST work. If we cannot run your spec in this way, we won't consider the co
 
 ## Writing the spec
 
-## Style Guide
+### Style Guide
 
 While writing code, please use the following guidelines.
 
-### Avoid using `sleep` whenever possible. 
+#### Avoid using `sleep` whenever possible. 
 
 Capybara usually sleeps automatically until an element is found.
 
-### Indentation
+#### Indentation
 
 Indentation must be 2 spaces. Do NOT use tabs.
 
-### Avoid changing the template as much as possible
+#### Avoid changing the template as much as possible
 
 Try to limit your changes to the block of the `step` method. You can put code outside of it if needed, for instance to share state across multiple steps. However, we'd like most of the logic of the step to be encapsulated within the step.
 
