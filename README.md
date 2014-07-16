@@ -28,8 +28,24 @@ bundle exec rainforest_test test_case.rb
 
 This MUST work. If we cannot run your spec in this way, we won't consider the contract complete.
 
+## Writing the spec
+
 ## Style Guide
 
-- Avoid using sleep whenever possible
-- 2 spaces, no tab
-- avoid changing the template as much as possible
+While writing code, please use the following guidelines.
+
+### Avoid using `sleep` whenever possible. 
+
+Capybara usually sleeps automatically until an element is found.
+
+### 2 spaces, no tab
+
+Indentation should be 2 spaces. Use SPACES, not tabs.
+
+### Avoid changing the template as much as possible
+
+Try to limit your changes to the block of the `step` method. You can put code outside of it if needed, for instance to share state across multiple steps. However, we'd like most of the logic of the step to be encapsulated within the step.
+
+## Help!
+
+If you find a bug with this, please email [qe@rainforestqa.com](mailto:qu@rainforestqa.com)
