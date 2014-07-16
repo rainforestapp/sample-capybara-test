@@ -23,5 +23,13 @@ bundle install
 You can then run the specs using the following command:
 
 ```bash
-bundle exec ruby test_case.rb
+bundle exec rainforest_test test_case.rb
 ```
+
+This MUST work. If we cannot run your spec in this way, we won't consider the contract complete.
+
+## Style Guide
+
+- Avoid using sleep whenever possible
+- 2 spaces, no tab
+- avoid changing the template as much as possible
