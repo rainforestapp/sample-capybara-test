@@ -51,6 +51,16 @@ Indentation should be 2 spaces. Use SPACES, not tabs.
 
 Try to limit your changes to the block of the `step` method. You can put code outside of it if needed, for instance to share state across multiple steps. However, we'd like most of the logic of the step to be encapsulated within the step.
 
+### Interpolated values
+
+While reading the step instructions, it's possible you see something like `{{ random.number }}` or ``{{ randome.email }}``. These values are interpolated values. Although we'll build native support for those in the runtime, for now, just replace them with something sane and in the spirit of what they should be. 
+
+For instance, `{{ random.email }}` could be something like:
+
+```ruby
+    "test+#{test_id}+{Time.now.to_i}@examle.org"
+```
+
 ## Starting a new test
 
 If you automate multiple tests for us, make sure you always work from the latest version of this repository.
