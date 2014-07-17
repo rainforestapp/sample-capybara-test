@@ -79,6 +79,16 @@ git pull origin master
 bundle install
 ```
 
+## Advance features
+
+### Timeouts
+
+By default, we have configured Capybara to timeout after 20 seconds. This can be a little long and annoying while developing. This value is configurable through an environment variable.
+
+```bash
+CAPYBARA_WAIT_TIME=1 bundle exec rainforest_test test_case.rb
+```
+
 ## Help!
 
 If you find a bug with this, please email [qe@rainforestqa.com](mailto:qu@rainforestqa.com)
