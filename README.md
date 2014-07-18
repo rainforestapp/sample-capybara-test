@@ -68,6 +68,49 @@ For instance, `{{ random.email }}` could be something like:
     "test+#{test_id}+{Time.now.to_i}@examle.org"
 ```
 
+#### User defined variable
+
+It's possible that the test contains something like:
+
+```ruby
+define_variable_scope :logins do
+  define_variable :password do
+    # By default, this returns a sample value we random picked from a list of
+    # possible value. If this is preventing your test from running, you can
+    # change this method to generate a more appropriate value.
+    "83d9465c9"
+  end
+
+  define_variable :client_no do
+    # By default, this returns a sample value we random picked from a list of
+    # possible value. If this is preventing your test from running, you can
+    # change this method to generate a more appropriate value.
+    "170"
+  end
+end
+```
+
+These variables are defined by our system when we run. Their values will change with each run. We use them to avoid clashes when running tests in parallel on the same server.
+
+By default, we provide a sample value of what this variable could be. It's possible that you might have to edit those in your test to get them to always pass. For instance, here `client_no` could be something like `rand(200).to_s`.
+
+Any code you put in the body of `define_variable_scope` will be ignore when we run those tests in production. This helper is only there for you to use when developing.
+
+One a variable is define, you can use it anywhere in the body of the test. For instance, the previous example would make `logins.password` and `logins.client_no` available in the test. You can then write somethin like:
+
+```ruby
+step id: :ignored,
+    action: "Login with the email \"t-{{ logins.client_no }}@e.rainforestqa.com\" and the password \"{{ logins.password }}\". If you are already logged in, log out first. ", 
+    response: "Did you get logged in successfully? " do
+  # *** START EDITING HERE ***
+
+  fill_in :email, with: "t-#{logins.client_no}@e.rainforestqa.com"
+  fill_in :password, with: logins.password
+  # ...
+end
+
+```
+
 ## Starting a new test
 
 If you automate multiple tests for us, make sure you always work from the latest version of this repository.

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rainforestapp/rainforest_ruby_runtime.git
-  revision: dee7d0d918bf4ab5fe56087afeb250908e38c447
+  revision: b294b56528351d34714b0efd708660675ff8b146
   specs:
     rainforest_ruby_runtime (0.0.1)
       capybara (~> 2.4)
@@ -35,7 +35,7 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    parallel (1.0.0)
+    parallel (1.1.2)
     parallel_tests (0.16.6)
       parallel
     pry (0.9.12.4)
