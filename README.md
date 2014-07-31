@@ -50,6 +50,28 @@ While writing code, please use the following guidelines.
 
 Capybara usually sleeps automatically until an element is found.
 
+#### Prefer using CSS selector or XPath
+
+We've found that CSS selectors are much more robust to minor page change that XPath. So rather than doing:
+
+```ruby
+find(:xpath, "//a[@class='header-logout-link']").click
+```
+
+prefer the default Capybara form of:
+
+```ruby
+find(".header-logout-link").click
+```
+
+an even better way to deal with this problem however is to nos use a matcher at all. Capybara lets you do:
+
+```ruby
+click_link "Logout"
+```
+
+which is much more robust than using selectors. You should always use this form whenever possible.
+
 #### Indentation
 
 Indentation must be 2 spaces. Do NOT use tabs.
