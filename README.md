@@ -71,6 +71,21 @@ click_link "Logout"
 ```
 
 which is much more robust than using selectors. You should always use this form whenever possible.
+#### Beware of `first`
+
+The first helper in Capybara is a useful tool. However, you need to aware that it does not wait for the element to be present on the page. In other words, if the page is still loading, the call to `first` will wait.
+
+So rather than doing:
+
+```ruby
+first('.my_class')
+```
+
+you can do:
+
+```ruby
+find('.my_class', match: :first)
+```
 
 #### Indentation
 
