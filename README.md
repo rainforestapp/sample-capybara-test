@@ -85,6 +85,7 @@ you can do:
 
 ```ruby
 find('.my_class', match: :first)
+```
 
 #### Don't assume elements ordering
 
