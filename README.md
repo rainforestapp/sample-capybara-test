@@ -108,6 +108,38 @@ fill_in ".some-other-selector", with: '123'
 
 That way, if there's a slight change to the web page, the test does not completely break.
 
+#### Exceptions
+
+It's bad practice to use exceptions to control flows and rescuing exceptions. For instance,
+
+```ruby
+begin
+  find('.something').click
+  page.driver.browser.switch_to.alert.accept
+rescue
+end    
+```
+
+`rescue` in ruby will catch any exception and makes it difficult to understand what happen. If you want to check if an element exists, use the Capybara methods:
+
+```ruby
+if page.has_selector?('.something')
+  find('.something').click
+  page.driver.browser.switch_to.alert.accept
+end
+```
+
+If you expect that value to be there always, you can use an assertion to validate that it is there:
+
+```ruby
+  expect(page).to have_selector('.something')
+  find('.something').click
+  page.driver.browser.switch_to.alert.accept
+end
+```
+
+This way, the exception raised by the run time is meaningful. 
+
 #### Indentation
 
 Indentation must be 2 spaces. Do NOT use tabs.
