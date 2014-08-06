@@ -85,7 +85,27 @@ you can do:
 
 ```ruby
 find('.my_class', match: :first)
+
+#### Don't assume elements ordering
+
+Avoid writing code like this:
+
+```ruby
+inputs = all('input')
+inputs[0].click
+inputs[0].native.send_keys("4242424242424242")
+inputs[1].native.send_keys("123")
+inputs[1].click
 ```
+
+This makes for an easily breakable test since the elements could be reordered or restyled. A better version is:
+
+```ruby
+fill_in ".some-selector", with: '4242424242424242'
+fill_in ".some-other-selector", with: '123'
+```
+
+That way, if there's a slight change to the web page, the test does not completely break.
 
 #### Indentation
 
@@ -136,7 +156,7 @@ Any code you put in the body of `define_variable_scope` will be ignore when we r
 One a variable is define, you can use it anywhere in the body of the test. For instance, the previous example would make `logins.password` and `logins.client_no` available in the test. You can then write somethin like:
 
 ```ruby
-step id: :ignored,
+step id: 123,
     action: "Login with the email \"t-{{ logins.client_no }}@e.rainforestqa.com\" and the password \"{{ logins.password }}\". If you are already logged in, log out first. ", 
     response: "Did you get logged in successfully? " do
   # *** START EDITING HERE ***
