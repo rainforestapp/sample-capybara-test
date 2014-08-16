@@ -64,7 +64,7 @@ prefer the default Capybara form of:
 find(".header-logout-link").click
 ```
 
-an even better way to deal with this problem however is to nos use a matcher at all. Capybara lets you do:
+an even better way to deal with this problem however is to not use a matcher at all. Capybara lets you do:
 
 ```ruby
 click_link "Logout"
@@ -186,7 +186,7 @@ By default, we provide a sample value of what this variable could be. It's possi
 
 Any code you put in the body of `define_variable_scope` will be ignore when we run those tests in production. This helper is only there for you to use when developing.
 
-One a variable is define, you can use it anywhere in the body of the test. For instance, the previous example would make `logins.password` and `logins.client_no` available in the test. You can then write somethin like:
+One a variable is define, you can use it anywhere in the body of the test. For instance, the previous example would make `logins.password` and `logins.client_no` available in the test. You can then write something like:
 
 ```ruby
 step id: 123,
