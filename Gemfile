@@ -1,6 +1,5 @@
 ruby "2.1.2"
-
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 group :test, :development do
   gem 'pry'
