@@ -28,6 +28,7 @@ Then, you must install the dependencies:
 ```bash
 gem install bundler
 bundle install
+brew install geckodriver
 ```
 
 ## Running the tests
