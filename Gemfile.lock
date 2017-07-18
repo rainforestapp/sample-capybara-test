@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rainforestapp/rainforest_ruby_runtime.git
-  revision: f2692a08bf61e580f21387b9135f86a74ba01a69
+  revision: a1837421c394b3706b9b90530a66fce5242ca2ce
   specs:
     rainforest_ruby_runtime (0.0.3)
       capybara (~> 2.7.1)
