@@ -3,6 +3,6 @@ source "https://rubygems.org"
 
 group :test, :development do
   gem 'pry'
-  gem 'rainforest_ruby_runtime', github: 'rainforestapp/rainforest_ruby_runtime'
+  gem 'rainforest_ruby_runtime', git: 'https://www.github.com/rainforestapp/rainforest_ruby_runtime'
 end
 

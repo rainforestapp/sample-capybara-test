@@ -6,7 +6,7 @@ You will need the following installed on your machine:
 
 1. [Firefox](http://www.mozilla.org/en-US/firefox/new/)
 2. [Git](http://git-scm.com/)
-3. Ruby 2.1.2
+3. Ruby 2.4.4
 
 ## Setup
 
@@ -17,18 +17,12 @@ git clone git@github.com:rainforestapp/sample-capybara-test.git
 cd sample-capybara-test
 ```
 
-You must use the version or Ruby specified in the `.rvmrc` file. You can check what you have by running ``ruby -v``. If you have [rvm](https://rvm.io/) already installed, you can simply run:
-
-```bash
-source ./.rvmrc
-```
-
-Then, you must install the dependencies:
+Then install the dependencies:
 
 ```bash
 gem install bundler
 bundle install
-brew install geckodriver
+brew install geckodriver # If on OSX
 ```
 
 ## Running the tests
@@ -72,6 +66,7 @@ click_link "Logout"
 ```
 
 which is much more robust than using selectors. You should always use this form whenever possible.
+
 #### Beware of `first`
 
 The first helper in Capybara is a useful tool. However, you need to aware that it does not wait for the element to be present on the page. In other words, if the page is still loading, the call to `first` will wait.
